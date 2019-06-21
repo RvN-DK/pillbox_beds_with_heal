@@ -6,4 +6,4 @@ Feature:
 
 Giving full health after x amount of seconds
 
-Full credit to https://forum.fivem.net/u/STREET-LIFE-RP
+Full credit to BUCKO
