@@ -7,3 +7,5 @@ Feature:
 Giving full health after x amount of seconds
 
 Full credit to BUCKO
+
+I only made the healing part
