@@ -53,20 +53,25 @@ function bedActive(x, y, z, heading)
     SetEntityHeading(GetPlayerPed(-1), heading + 180.0)
     InAction = true
 
-    Citizen.CreateThread(function ()
-        Citizen.Wait(5)
-        local player = GetPlayerPed(-1)
+	Citizen.CreateThread(function ()
+	    Citizen.Wait(5)
+	    local health = GetEntityHealth(PlayerPedId())
 
-        if (GetEntityHealth(GetPlayerPed(-1)) < 200)  then
-            TriggerEvent('esx:showNotification', '~g~You are being treated, please wait'); 
-            Citizen.Wait(5000) -- Time before heal
-            SetEntityHealth(PlayerPedId(-1), 200)
-            TriggerEvent('esx:showNotification', '~g~ You are now healthy'); 
+	    if (health < 200)  then
+		TriggerEvent('esx:showNotification', '~g~You are being treated, please wait'); 
+		Citizen.Wait(5000)
+		if InAction == true then
+		    while GetEntityHealth(PlayerPedId()) < 200 do
+			Citizen.Wait(2000)
+			SetEntityHealth(PlayerPedId(), GetEntityHealth(PlayerPedId()) + 1)
+		    end
+		    TriggerEvent('esx:showNotification', '~g~ You are now healthy'); 
+		end
 
-        elseif (GetEntityHealth(GetPlayerPed(-1)) == 200) then
-            TriggerEvent('esx:showNotification', '~y~ You do not need medical attention'); 
-        end
-    end)
+	    elseif (health == 200) then
+		TriggerEvent('esx:showNotification', '~y~ You do not need medical attention'); 
+	    end
+	end)
 
     Citizen.CreateThread(function()
         while true do
