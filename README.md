@@ -4,7 +4,7 @@ This is a modified version of pillbox beds https://forum.fivem.net/t/pillbox-bed
 
 Feature:
 
-Giving full health after x amount of seconds
+Giving +1 health slowly until the player is full in health
 
 Full credit to BUCKO
 
