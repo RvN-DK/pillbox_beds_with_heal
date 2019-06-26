@@ -11,6 +11,10 @@ Full credit to BUCKO
 I only made the healing part
 
 
+#Changes 26/06-2019
+
+Added a new verion that is standalone so its works on vrp framework
+
 
 #Changes 25/06-2019
 
