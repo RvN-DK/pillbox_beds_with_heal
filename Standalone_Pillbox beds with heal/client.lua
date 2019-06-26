@@ -52,7 +52,7 @@ function bedActive(x, y, z, heading)
             exports['mythic_notify']:DoHudText('inform', 'You are being treated, please wait');
             Citizen.Wait(5000)
             if InAction == true then
-                while GetEntityHealth(PlayerPedId()) < 200 do
+                while GetEntityHealth(PlayerPedId()) < 200 and InAction == true do
                     Citizen.Wait(2000)
                     SetEntityHealth(PlayerPedId(), GetEntityHealth(PlayerPedId()) + 1)
                 end
