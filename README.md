@@ -13,7 +13,7 @@ I only made the healing part
 
 #Changes 26/06-2019
 
-Added a new verion that is standalone so its works on vrp framework
+Added a new verion that is standalone so its works on vrp framework (The notifications are made with mythic_notify so if you dont use that notify script you need to change the notifications in the client file)
 
 
 #Changes 25/06-2019
